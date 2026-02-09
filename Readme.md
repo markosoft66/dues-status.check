@@ -2,7 +2,7 @@
 
 A secure student dues verification system built with Flask.
 
- **Full documentation and setup instructions are available in [dueschecker/README.md](dueschecker/README.md)**
+ **Full documentation and setup instructions are available in [dueschecker/Readme.md](dueschecker/Readme.md)**
 
 ## Quick Start
 
@@ -34,4 +34,4 @@ dueschecker/                    # Main application folder
  templates/                  # HTML templates
 ```
 
-See [dueschecker/README.md](dueschecker/README.md) for complete setup and deployment instructions.
+See [dueschecker/Readme.md](dueschecker/Readme.md) for complete setup and deployment instructions.
