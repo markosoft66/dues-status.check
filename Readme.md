@@ -1,24 +1,37 @@
+# CoSSA Portal - Dues Checker
+
+A secure student dues verification system built with Flask.
+
+ **Full documentation and setup instructions are available in [dueschecker/README.md](dueschecker/README.md)**
+
+## Quick Start
+
 ```
-
----
-
-### 2. How to use it (for your documentation)
-
-In your project report or for your own reference, the command to install everything in one go is:
-
-```bash
+cd dueschecker
 pip install -r requirements.txt
-
+flask run
 ```
 
----
+Then navigate to 
+```http://127.0.0.1:5000```
 
-### Final Project Status Checklist
+## Key Features
 
-Before you close your laptop, here is a quick check of your secure, optimized folder:
+-  Secure admin login with brute force protection
+-  Fast search by student ID or name
+-  Real-time Google Sheets integration
+-  Smart 10-minute caching for performance
+-  Auto-logout after 10 minutes of inactivity
 
-* **`app.py`**: Handles logic, session timeout (10 mins), and brute force protection (2s delay).
-* **`data_handler.py`**: Fetches 7 tabs and caches data for 10 mins to prevent overheating.
-* **`.env`**: Stores your passwords and Google Sheet links privately.
-* **`requirements.txt`**: Lists your dependencies.
-* **`templates/`**: Contains `login.html` and `search.html`.
+## Project Structure
+
+```
+dueschecker/                    # Main application folder
+ app.py                      # Flask application
+ data_handler.py             # Data fetching & caching
+ requirements.txt            # Dependencies
+ README.md                   # Full documentation
+ templates/                  # HTML templates
+```
+
+See [dueschecker/README.md](dueschecker/README.md) for complete setup and deployment instructions.

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CoSSA Dues Checker</title>
+    <style>
+        /* border-box ensures padding doesn't change the final width */
+        * { box-sizing: border-box; }
+
+        body { 
+            font-family: 'Georgia', serif; 
+            background: linear-gradient(to bottom, #0d47a1, #ffffff); 
+            color: #0d47a1; 
+            text-align: center; 
+            padding-top: 100px; 
+            height: 100vh; 
+            margin: 0; 
+        }
+
+        .login-box { 
+            background: white; 
+            border-radius: 10px; 
+            padding: 30px; 
+            width: 340px; /* Slightly wider to accommodate internal padding */
+            margin: auto; 
+            box-shadow: 0 0 15px rgba(0,0,0,0.2); 
+        }
+
+        h1 { font-family: 'Times New Roman', serif; margin-bottom: 20px; }
+
+        /* Unified style for both inputs */
+        input { 
+            width: 100%; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #0d47a1; 
+            border-radius: 5px; 
+            display: block;
+        }
+
+        /* Container for password to hold the eye icon */
+        .password-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .eye { 
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer; 
+            color: #0d47a1; 
+            user-select: none;
+        }
+
+        button { 
+            background: #0d47a1; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            width: 100%; 
+            margin-top: 10px;
+        }
+
+        .error { color: red; margin-top: 10px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h1>CoSSA Dues Portal</h1>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            
+            <div class="password-wrapper">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <span class="eye" onclick="togglePassword()">👁</span>
+            </div>
+
+            <button type="submit">Login</button>
+            {% if error %}<p class="error">{{ error }}</p>{% endif %}
+        </form>
+    </div>
+
+    <script>
+        function togglePassword() {
+            var pwd = document.getElementById("password");
+            pwd.type = pwd.type === "password" ? "text" : "password";
+        }
+    </script>
+</body>
+</html>
